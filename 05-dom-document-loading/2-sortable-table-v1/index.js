@@ -4,7 +4,7 @@ export default class SortableTable {
   sortedOrder = null;
   orderDirection = {asc: 1, desc: -1}
   sortMethods = {
-    string: (arr, order, category) => [...arr].sort((a, b) => order * a[category].localeCompare(b[category], { caseFirst: 'upper' })),
+    string: (arr, order, category) => [...arr].sort((a, b) => order * a[category].localeCompare(b[category], ['ru'], { caseFirst: 'upper' })),
     number: (arr, order, category) => [...arr].sort((a, b) => order * (a[category] - b[category]))
   }
 
