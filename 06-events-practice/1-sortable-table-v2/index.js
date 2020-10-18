@@ -123,7 +123,7 @@ export default class SortableTable {
       case 'number':
         return direction * (a[field] - b[field]);
       case 'string':
-        return direction * a[field].localeCompare(b[field], ['ru']);
+        return direction * a[field].localeCompare(b[field], ['ru'], { caseFirst: 'upper' });
       case 'custom':
         return direction * customSorting(a, b);
       default:
