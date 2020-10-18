@@ -94,7 +94,7 @@ export default class SortableTable {
     this.element = element;
     this.subElements = this.getSubElements(element);
 
-    this.subElements.header.addEventListener('click', this.handleClick);
+    this.subElements.header.addEventListener('pointerdown', this.handleClick);
   }
 
   sort(field, order) {
