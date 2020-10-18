@@ -8,7 +8,7 @@ export default class SortableTable {
     const sortableHead = e.target.closest('[data-sortable="true"]');
     if (sortableHead) {
       const field = sortableHead.dataset.id;
-      const order = sortableHead.dataset.order === 'asc' ? 'desc' : 'asc';
+      const order = sortableHead.dataset.order === 'desc' ? 'asc' : 'desc';
 
       this.sort(field, order);
     }
