@@ -6,7 +6,6 @@ class Tooltip {
     if (!Tooltip.instance) {
       Tooltip.instance = this;
     }
-    document.addEventListener('pointermove', this.handleMove);
   }
 
   render(tooltip) {
@@ -43,12 +42,14 @@ class Tooltip {
     if (element) {
       this.render(element.dataset.tooltip);
       this.handleMove(event);
+
+      document.addEventListener('pointermove', this.handleMove);
     }
   };
 
   handleMove = event => {
-    this.element.style.left = `${event.clientX}px`;
-    this.element.style.top = `${event.clientY}px`;
+    this.element.style.left = `${event.clientX + 1}px`;
+    this.element.style.top = `${event.clientY + 1}px`;
   }
 
   handleOut = () => {
