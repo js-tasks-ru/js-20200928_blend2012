@@ -1,9 +1,6 @@
-import escapeHtml from './utils/escape-html.js';
 import fetchJson from './utils/fetch-json.js';
 
 const domain = 'https://course-js.javascript.ru';
-
-const getPath = (url, from, to) => escapeHtml(`${domain}/${url}?from=${from}&to=${to}`);
 
 export default class ColumnChart {
   element;
